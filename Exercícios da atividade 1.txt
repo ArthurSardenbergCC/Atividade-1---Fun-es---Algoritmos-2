@@ -1,0 +1,408 @@
+Exercícios da página 7 - Modularização de código e passagem de parâmetros
+
+Letra A
+
+1) Algoritmo "Múltiplo de 4"
+#include <iostream>
+using namespace std;
+
+void multiplo_4 (){
+    int numero = 0;
+    cin >> numero;
+    if (numero % 4 == 0){
+        cout << "O número é múltiplo de 4" << endl;
+    } else {
+        cout << "O número não é múltiplo de 4" << endl;
+    }    
+}
+
+int main (){
+    multiplo_4();
+    return 0;
+}
+
+
+2) Algoritmo "Paridade"
+#include <iostream>
+using namespace std;
+
+void paridade (){
+    int numero = 0;
+    cin >> numero; 
+    if (numero % 2 == 0){
+        cout << "O número é par" << endl;
+    } else {
+        cout << "O número é ímpar" << endl;
+    }    
+}
+
+int main (){
+    paridade();
+    return 0;
+}
+
+3) Algoritmo "Soma de Intervalos"
+#include <iostream>
+using namespace std;
+
+void soma_intervalo (){
+    int inicio = 0, final = 0, soma = 0;
+    cin >> inicio >> final;    
+    while (final >= inicio){
+        soma += final;
+        final--;
+    }
+    cout << soma;
+}
+
+int main (){
+    soma_intervalo();
+    return 0;
+}
+
+4) Algoritmo "Volume de uma esfera"
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void volume_esfera (){
+    float volume = 0, raio = 0;
+    cin >> raio;
+    volume = (4 * 3.14 * pow (raio,3)) / 3;
+    cout << volume;
+}
+
+int main (){
+    volume_esfera();
+    return 0;
+}
+
+5) Algoritmo "Fatorial"
+#include <iostream>
+using namespace std;
+
+void fatorial (){
+    int produto = 1, numero = 0;
+    cin >> numero;
+    while (numero > 1){
+        produto *= numero;
+        numero--;
+    }
+    cout << produto;
+}
+
+int main (){
+    fatorial();
+    return 0;
+}
+
+6) Algoritmo "Potência"
+#include <iostream>
+using namespace std;
+
+void potencia (){
+    int produto = 1, base = 0, expoente = 0;
+    cin >> base >> expoente;
+    while (expoente > 0){
+        produto *= base;
+        expoente--;
+    }
+    cout << produto;
+}
+
+int main (){
+    potencia();
+    return 0;
+}
+
+
+Letra B
+
+1) Algoritmo "Múltiplo de 4"
+#include <iostream>
+using namespace std;
+
+bool multiplo_4 (int valor){
+    return (valor % 4 == 0 ? true : false);
+}
+
+int main (){
+    int numero = 0;
+    cin >> numero;
+    multiplo_4(numero);
+    if (multiplo_4(numero)){
+        cout << "O número é múltiplo de 4" << endl;
+    } else {
+        cout << "O número não é múltiplo de 4" << endl;
+    }
+    return 0;
+}
+
+2) Algoritmo "Paridade"
+#include <iostream>
+using namespace std;
+
+bool paridade (int valor){
+    return (valor % 2 == 0 ? true : false);
+}
+
+int main (){
+    int numero = 0;
+    cin >> numero;
+    paridade(numero);
+    if (paridade(numero)){
+        cout << "O número é par" << endl;
+    } else {
+        cout << "O número é ímpar" << endl;
+    }
+    return 0;
+}
+
+3) Algoritmo "Soma de Intervalos"
+#include <iostream>
+using namespace std;
+
+int soma_intervalo (int valor_inicial, int valor_final){
+    int soma = 0;
+    while (valor_final >= valor_inicial){
+        soma += valor_final;
+        valor_final--;
+    }
+    return soma;
+}
+
+int main (){
+    int inicio = 0, final = 0;
+    cin >> inicio >> final;
+    cout << soma_intervalo(inicio, final);
+    return 0;
+}
+
+4) Algoritmo "Volume de uma esfera"
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+float volume_esfera (float valor){
+    float volume = 0;
+    volume = (4 * 3.14 * pow (valor,3)) / 3;
+    return volume;
+}
+
+int main (){
+    float raio = 0;
+    cin >> raio;
+    cout << volume_esfera(raio);
+    return 0;
+}
+
+5) Algoritmo "Fatorial"
+#include <iostream>
+using namespace std;
+
+int fatorial (int valor){
+    int produto = 1;
+    while (valor > 1){
+        produto *= valor;
+        valor--;
+    }
+    return produto;
+}
+
+int main (){
+    int numero = 0;
+    cin >> numero;
+    cout << fatorial(numero);
+    return 0;
+}
+
+6) Algoritmo "Potência"
+#include <iostream>
+using namespace std;
+
+int potencia (int valor_base, int valor_expoente){
+    int produto = 1;
+    while (valor_expoente > 0){
+        produto *= valor_base;
+        valor_expoente--;
+    }
+    return produto;
+}
+
+int main (){
+    int base = 0, expoente = 0;
+    cin >> base >> expoente;
+    cout << potencia(base, expoente);
+    return 0;
+}
+
+
+Letra C
+
+1) Significado de função
+As funções são seções independentes de código que realizam uma tarefa específica, a fim de resolver um dado subproblema. Elas são nominadas de acordo com as regras dos demais identificadores. Dependendo do tipo de função, pode aceitar parâmetros e/ou retornar valores.
+
+2) Significado de argumentos e parâmetros
+Os argumentos são os valores fornecidos às funções, enquanto os parâmetros são os valores que compõem a chamada de uma função específica. Os argumentos e parâmetros permitem generalizar funções, permitindo que quaisquer valores, respeitando os tipos primitivos, sejam fornecidos às funções.
+
+Os parâmetros são uma das formas de declaração de variáveis no escopo de funções, sendo inicializados após a chamada das funções e existindo somente no decorrer da execução de funções.
+
+3) Tipos de funções
+As funções sem retorno e sem parâmetros apenas executam suas tarefas após serem chamadas por outro bloco de código, não recebendo nenhum argumento nem retornando nenhum valor. Elas obrigatoriamente são construídas com o tipo "void".
+
+As funções sem retorno e com parâmetros executam tarefas após serem chamadas, mas podem receber argumentos de outros blocos de código. Também devem ser identificadas com o tipo "void".
+
+As funções com retorno e com parâmetros recebem argumentos de outros blocos de código, executam tarefas e retornam valores de um dado tipo primitivo para o local que originou a chamada.
+
+4) Void
+O termo "void" indica vazio ou nulo e é utilizado em funções que não possuem retorno e/ou que possuem a lista de parâmetros vazia.
+
+5) Tipos de passagem de parâmetros
+A passagem de argumentos ocorre de duas formas: por valor e por referência. A primeira consiste em fornecer uma cópia do valor à função, sem alterar o estado da variável no seu local de origem. Já a segunda se baseia no fornecimento do endereço da variável na chamada e a posterior alteração, no local de origem, do valor da variável pela função requisitada. 
+
+O tipo padrão no C e C++ é a passagem por valor (na maioria das estruturas).
+
+6) Retorno de uma função
+
+O nome da função que retorna um valor deve ser precedido pelo tipo primitivo que será devolvido ao bloco de código que realizou a chamada. O retorno é feito por meio da instrução "return", a qual encerra a execução da função e passa o controle de volta ao ponto em que a função foi chamada.
+
+Toda função com retorno é capaz de retornar apenas um único valor após ser chamada, pois a instrução "return" é executada apenas uma vez por chamada.
+
+Os valores de retorno devem ser especificados entre parênteses (como parâmetros de instruções) ou consistirem em uma expressão lógica ou aritmética válida.
+
+A linguagem C++ permite que o valor de retorno de uma função seja armazenado em uma variável, mostrado em uma instrução de saída, utilizado em uma expressão lógica e/ou aritmética ou sirva de argumentos para outras funções.
+
+7) Algoritmo "área de um círculo"
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+float area_circulo (float medida_raio){
+    float area = 0;
+    area = 3.14 * pow (medida_raio, 2); 
+    return area;
+}
+
+int main (){
+    float raio = 0;
+    cin >> raio;
+    cout << area_circulo(raio);
+    return 0;
+}
+
+8) Algoritmo "ano bissexto"
+#include <iostream>
+using namespace std;
+
+bool ano_bissexto (int ano_dado){
+    return (ano_dado % 4 == 0 && (ano_dado % 100 != 0 || ano_dado % 400 == 0) ? true : false);
+}
+
+int main (){
+    int ano = 0;
+    cin >> ano;
+    ano_bissexto(ano);
+    if (ano_bissexto(ano)){
+        cout << "É um ano bissexto" << endl;
+    } else {
+        cout << "Não é um ano bissexto" << endl;
+    }
+    return 0;
+}
+
+9) Algoritmo "Celsius para Fahrenheit"
+#include <iostream>
+using namespace std;
+
+float celsius_fahrenheit (float temperatura){
+    float temp_fahrenheit = 0;
+    temp_fahrenheit = temperatura * (9.0 / 5) + 32; 
+    return temp_fahrenheit;
+}
+
+int main (){
+    float temp_celsius = 0;
+    cin >> temp_celsius;
+    cout << celsius_fahrenheit(temp_celsius);
+    return 0;
+}
+
+
+Extra (funções com parâmetros e sem retorno):
+3) Algoritmo "Soma de Intervalos"
+#include <iostream>
+using namespace std;
+
+void soma_intervalo (int valor_inicial, int valor_final){
+    int soma = 0;
+    while (valor_final >= valor_inicial){
+        soma += valor_final;
+        valor_final--;
+    }
+    cout << soma;
+}
+
+int main (){
+    int inicio = 0, final = 0;
+    cin >> inicio >> final;
+    soma_intervalo(inicio, final);
+    return 0;
+}
+
+4) Algoritmo "Volume de uma esfera"
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void volume_esfera (int valor){
+    int volume = 0;
+    volume = (4 * 3,14 * pow (valor,3)) / 3;
+    cout << volume;
+}
+
+int main (){
+    int raio = 0;
+    cin >> raio;
+    volume_esfera(raio);
+    return 0;
+}
+
+5) Algoritmo "Fatorial"
+#include <iostream>
+using namespace std;
+
+void fatorial (int valor){
+    int produto = 1;
+    while (valor > 1){
+        produto *= valor;
+        valor --;
+    }
+    cout << produto;
+}
+
+int main (){
+    int numero = 0;
+    cin >> numero;
+    fatorial(numero);
+    return 0;
+}
+
+6) Algoritmo "Potência"
+#include <iostream>
+using namespace std;
+
+void potencia (int valor_base, int valor_expoente){
+    int produto = 1;
+    while (valor_expoente > 0){
+        produto *= valor_base;
+        valor_expoente--;
+    }
+    cout << produto;
+}
+
+int main (){
+    int base = 0, expoente = 0;
+    cin >> base >> expoente;
+    potencia(base, expoente);
+    return 0;
+}
